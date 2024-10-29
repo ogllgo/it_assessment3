@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>HTML - Developing On The Web</title>
+        <base href="..">
+        <link rel="stylesheet" href="base.css">
+        <script src="base.js" defer></script>
+        <script src="stars.js" defer></script>
+    </head>
+
+    <body>
+        <div id="main">
+            <h1>HTML</h1>
+            <h3>What is HTML</h3>
+            <p>HTML is annoying</p>
+            <p>HTML uses tags</p>
+            <h2>How to use HTML</h2>
+            <h3>Boilerplate</h3>
+            <p>You first have to place some basic tags. Every HTML project looks like this at the start:</p>
+            <p>First, you define the file as a HTML file, with the line</p>
+            <pre><code>&lt!DOCTYPE HTML></code></pre>
+            <p>It then wraps the rest of the file in a wrapper saying that it is HTML.</p>
+            <pre><code>&lthtml>
+...
+&lt/html></code></pre>
+            <p>Then, it defines the head of the document. This contains things such as the page title, which is set to be nothing. This is done by the lines</p>
+            <pre><code>&lthead>
+    &lttitle>&lt/title>
+&lt/head></code></pre>
+            <p>Finally, it defines the body of the document to be empty. The body is where you put the actual content of the page.</p>
+            <pre><code>&ltbody>
+    
+&lt/body></code></pre>
+            <p>The final blank page is like this.</p>
+            <pre><code>&lt!DOCTYPE HTML>
+&lthtml>
+    &lthead>
+        &lttitle>&lt/title>
+    &lt/head>
+    &ltbody>
+        &lt!-- The webpage is empty --&gt
+    &lt/body>
+&lt/html></code></pre>
+            <p>But how can you make your own site? Here's where tags come into play.</p>
+            <h2>Tags</h2>
+            <p>These are the tags that will be used to make your first webpage.</p>
+            <h3>&ltp&gt</h3>
+            <p>This tag lets people see text in the same was as this. The tag lets you write paragraph text.</p>
+            <p>This is some example text for the tag `p`</p>
+            <h3>&lth1&gt</h3>
+            <p>This tag lets you make larger headers. This looks much larger than normal text. I use this for the largest headers, like the page title at the top.</span></p>
+            <h1 class="contents-ignore">This is some example text for the tag h1</h1>
+            <h3>&lth2&gt</h3>
+            <p>This tag lets you make larger headers. This looks much larger than normal text, but smaller than h1. I use this for the subheaders, like `Tags`</span></p>
+            <h2 class="contents-ignore">This is some example text for the tag h2</h2>
+            <h3>&lth3&gt</h3>
+            <p>This tag lets you make larger headers. This looks larger than smaller text, since it is smaller than h2. I use this for the smallest subheaders, like the tag names.</p>
+            <h3 class="contents-ignore">This is some example text for the tag h3</h3>
+        </div>
+        <div id="navbar">
+            <a class="nav-element" href="index.html">Home</a>
+            <a class="nav-element" href="pages/web.html">The Internet</a> <!-- tag error is here, the closing </a> was a </p> -->
+            <a class="nav-element current-page" href="pages/html_intro.html">HTML</a>
+            <a class="nav-element" href="pages/first_page.html">Your First Webpage</a>
+            <a class="nav-element" href="pages/credits.html">Credits</a>
+        </div>
+    </body>
+</html>

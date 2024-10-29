@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>The Internet - Developing On The Web</title>
+        <base href="..">
+        <link rel="stylesheet" href="base.css">
+        <script src="base.js" defer></script>
+        <script src="stars.js" defer></script>
+    </head>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            if (!document.querySelector("#info-popup")) {
+                const popup = document.createElement("p");
+                popup.id = "info-popup";
+                document.body.appendChild(popup);
+            }
+
+            /**
+             * 
+             * @param {HTMLElement} element 
+             * @param {string} info 
+             */
+            function addInfoText(selector, info) {
+                const element = document.querySelector(selector);
+                element.addEventListener("mouseenter", () => {
+                    document.getElementById("info-popup").style.display = "block";
+                    document.getElementById("info-popup").textContent = info;
+                });
+                element.addEventListener("mouseleave", () => {
+                    document.getElementById("info-popup").style.display = "none";
+                });
+                window.addEventListener("mousemove", (e) => {
+                    document.getElementById("info-popup").style.left = `${e.pageX}px`;
+                    document.getElementById("info-popup").style.top = `${e.pageY}px`;
+                });
+            }
+            addInfoText("#forward-name", "Forwards: collects data and send it along");
+            addInfoText("#gb-big-number", "One gigabyte is 1,073,741,824 bytes");
+            addInfoText("#confusing-internetworks", "Internetwork: a network of connected networks");
+            addInfoText("#html-explain", "HTML is the main structure of the webpage. It contains the text, images, and video that make up the page.");
+            addInfoText("#css-explain", "CSS is how the page looks. It contains rules on how to colour, position, and display elements defined in the HTML.");
+            addInfoText("#js-explain", "JavaScript is the function of the webpage. It contains code that tells the webpage what to do upon user input. JavaScript can control HTML and CSS.");
+        });
+    </script>
+    <body>
+        <div id="main">
+            <h1>The Internet</h1>
+            <hr>
+            <h3>What even is the internet?</h2>
+            <p>The internet is a series of connected devices. These include phones, laptops, servers, smartfridges, and broadly anything that can talk to any other device.</p>
+            <h3>How does the internet work?</h2>
+            <p>The internet works by first splitting up data into chunks, called packets, then passing these packets from router to router until they reach their destination.</p>
+            <h4>Why split up the data?</h4>
+            <p>Splitting up the data solves a problem. When you download a video or other large file, there has to be <b id="gb-big-number">gigabytes</b> of data sent to you.</p>
+            <p>This is a problem because if the data was all sent as one large stream, it would block other users: the routers would be busy trying to send your file, so they couldn't look at theirs.</p>
+            <h4>How this problem was solved</h4>
+            <p>This problem was solved by, as you have already seen, splitting it apart. Each tiny part, a few bytes, contains two parts.</p>
+            <p>The first part is the header. This contains information like who it is from, and where it is going.</p>
+            <p>The next part is the payload. This is the actual data that is trying to be sent from device to device.</p>
+            <p>The header contains who it is in a similar way that postage has return addresses: if it gets stuck or sent back, it can return to the sender.</p>
+            <h4>What is a router?</h4>
+            <p>A router is a device that <span id="forward-name">forwards</span> packets between networks, including <span id="confusing-internetworks">internetworks</span> like the Internet <a href="https://en.wikipedia.org/wiki/Router_(computing)"> (Wikipedia)</a>.</p>
+            <h5>Why can't you just send your data straight to the internet?</h5>
+            <p>This is like trying to send and recieve mail without a mailbox and being banned from the mail office: you can't really send others anything, and there is no way for people to send you their mail.</p>
+            <p>Another reason is like how there is mail offices in the first place. Many homes [devices] send their mail [packets] to the mail office [router] to process in bulk - your device isn't engineered for packet sending, but routers are.</p>
+            <hr>
+            <h2>Using the Internet</h2>
+            <h3>Browsers</h3>
+            <p>Browsers are the main form of internet usage for the average person. They let you send and recieve data through webpages, as well as view and interact with them.</p>
+            <p>An example of a webpage you can interact with and view is this page itself. Your browser takes the <span id="html-explain"><i>HTML</i></span> and the <span id="css-explain"><i>CSS</i></span> of the webpage, as well as some <span id="js-explain"><i>JavaScript</i></span>, and then displays those three together. This is a very interesting process that will be covered once you learn more about these three individually.</p>
+            
+            <hr>
+            <div id="page-container">
+                <a href="index.html" class="page-button"><button>↲Home</button></a>
+                <a href="pages/html_intro.html" class="page-button"><button>HTML basics↳</button></a>
+            </div>
+        </div>
+        <div id="navbar">
+            <a class="nav-element" href="index.html">Home</a>
+            <a class="nav-element current-page" href="pages/web.html">The Internet</a> <!-- tag error is here, the closing </a> was a </p> -->
+            <a class="nav-element" href="pages/html_intro.html">HTML</a>
+            <a class="nav-element" href="pages/first_page.html">Your First Webpage</a>
+            <a class="nav-element" href="pages/credits.html">Credits</a>
+        </div>
+        <div id="star-container"></div>
+    </body>
+</html>

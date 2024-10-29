@@ -1,0 +1,204 @@
+* {
+    /* https://wiki.hyprland.org START */
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;
+    /* https://wiki.hyprland.org END */
+    line-height: 1.2;
+}
+html, body {
+    height: 100%;
+    margin: 0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    min-height: 100vh;
+    min-width: 100vh;
+    background-image: linear-gradient(90deg, rgb(0, 0, 50), rgb(0, 50, 0));
+    /* CHATGPT REFERENCE START */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* CHATGPT REFERENCE STOP */
+}
+
+#main, #navbar, #this-page {
+    position: absolute;
+    top: 0px;
+}
+
+#navbar, #this-page {
+    position: fixed;
+    height: 100%;
+}
+
+#main {
+    width: min(100% - 600px, 750px);
+
+    /* move the left to the middle of the page, then move the middle of the element to the left of the element */
+    left: 50%; /* move left to the middle */
+    transform: translateX(-50%); /* move to the left half of the space */
+    color: rgb(200, 200, 200);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(0, 30, 30, 0.0);
+}
+#main > * {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#main > h1 {
+    text-align: center;
+    margin-left: 5px;
+}
+#main > h2 {
+    margin-left: 10px;
+}
+#main > p {
+    padding-left: 20px;
+}
+#navbar {
+    left: 0px;
+    background-color: rgba(0, 0, 30, 0.0);
+    width: min(200px, min-content);
+}
+#navbar > * {
+    display: block;
+    padding: 0px 10px;
+    margin: 4px 0px;
+}
+#navbar > a {
+    text-decoration: none;
+    color: rgb(100, 200, 250);
+}
+#navbar > a:hover {
+    text-decoration: underline;
+    color: cornflowerblue;
+}
+
+#navbar > .current-page {
+    pointer-events: none;
+    color: white;
+}
+
+/* https://stackoverflow.com/questions/35679063/making-code-block-in-css-look-good reference start */
+pre {
+    margin-left: 0px;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    font-family: 'Monaco', monospace;
+    /* CHATGPT, NOT FROM THE stackoverflow SOURCE */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: pre; /* Keeps whitespace formatting */
+    /* CHATGPT END */
+}
+
+code {
+    font-family: 'Droid Sans Mono', 'monospace', monospace;
+    line-height: 100%;
+    padding: 0.2em 0em;
+    letter-spacing: -0.05em;
+    word-break: normal;
+    border-radius: 5px;
+}
+
+pre code {
+    border: none;
+    background: none;
+    line-height: 1em;
+    letter-spacing: normal;
+    word-break: break-all;
+}
+/* https://stackoverflow.com/questions/35679063/making-code-block-in-css-look-good reference end */
+
+#page-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#page-container * {
+    width: min(200px, min-content);
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+}
+
+a.page-button > button {
+    background-color: rgba(30, 30, 30, 0.0);
+    color: rgb(100, 150, 200);
+}
+
+a.page-button > button:hover {
+    color: rgb(50, 150, 200);
+}
+
+button.page-button {
+    background-color: rgba(30, 30, 30, 0.0);
+    color: rgb(120, 120, 120);
+}
+button.page-button:hover {
+    color: rgb(80, 80, 80);
+}
+
+#this-page {
+    right: 0;
+    width: 300px;
+    background-color: rgba(0, 30, 0, 0.0);
+    display: block;
+}
+#this-page * {
+    text-decoration: none;
+    color: rgb(200, 200, 200);
+    cursor:default;
+}
+#this-page > * {
+    display: flexbox;
+}
+.h3header-link {
+    padding-left: 30px;
+    padding-right: 10px;
+    font-size: 16px;
+}
+.h2header-link {
+    padding-left: 20px;
+    padding-right: 10px;
+    font-size: 18px;
+}
+.h1header-link {
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+#this-page *:hover {
+    color: rgb(200, 250, 200);
+}
+
+#info-popup {
+    display: none;
+    position: absolute;
+    pointer-events: none; /* unclickable */
+    z-index: 300;
+    background-color: rgb(50, 150, 50);
+    color: rgb(255, 255, 255);
+    padding: 3px 7px;
+    border-radius: 5px;
+    max-width: 300px;
+}
+
+#star-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 200vh;
+    pointer-events: none; /* unclickable */
+}
+.star {
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none; /* unclickable */
+    position: fixed;
+}
+
+span { /* Span elements, more often than not, are for things like text effects on hover. */
+    cursor: default;
+}
